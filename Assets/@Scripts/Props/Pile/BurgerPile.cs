@@ -2,15 +2,9 @@ using UnityEngine;
 
 public class BurgerPile : PileBase
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	public void Awake()
+	{
+		_size = new Vector3(0.5f, 0.3f, 0.5f);
+		_objectType = Define.EObjectType.Burger;
+	}
 }

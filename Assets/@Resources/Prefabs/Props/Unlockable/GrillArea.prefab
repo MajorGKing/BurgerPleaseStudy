@@ -559,7 +559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd83a74360e4a46d486e822078132612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConstructionArea: {fileID: 0}
+  ConstructionArea: {fileID: 262153487743308546}
   WorkerPos: {fileID: 8962799174965262875}
   StopSpawnBurger: 1
 --- !u!1001 &4485312835172541232
@@ -667,6 +667,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74726f06beb129c48878d3a59bd5f84b, type: 3}
+--- !u!114 &262153487743308546 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4439515104041791538, guid: 74726f06beb129c48878d3a59bd5f84b, type: 3}
+  m_PrefabInstance: {fileID: 4485312835172541232}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58fa031a5550640aca7caece69a1f62f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &888403067221512398 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3633056501048718334, guid: 74726f06beb129c48878d3a59bd5f84b, type: 3}
