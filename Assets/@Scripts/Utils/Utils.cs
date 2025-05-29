@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Net;
 using UnityEngine;
-using static Define;
 using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
 
@@ -123,5 +122,30 @@ public static class Utils
 
         Debug.LogError("AuthServer IPv4 Failed");
         return null;
-    } 
+    }
+
+    public static Define.EObjectType GetTrayObjectType(Transform t)
+	{
+        
+		switch (t.gameObject.tag)
+		{
+			case Define.TRASHOBJECT:
+				return Define.EObjectType.Trash;
+			case Define.BURGEROBJECT:
+				return Define.EObjectType.Burger;
+			case Define.MONEYOBJECT:
+				return Define.EObjectType.Money;
+		}
+
+		return Define.EObjectType.None;
+	}
+
+    public static string GetMoneyText(long money)
+	{
+		if (money < 1000) return money.ToString();
+		if (money < 1000000) return (money / 1000f).ToString("0.##") + "k"; // (k)
+		if (money < 1000000000) return (money / 1000000f).ToString("0.##") + "m"; // (m)
+		if (money < 1000000000000) return (money / 1000000000f).ToString("0.##") + "b"; // (b)
+		return (money / 1000000000000f).ToString("0.##") + "t"; // (t)
+	} 
 }

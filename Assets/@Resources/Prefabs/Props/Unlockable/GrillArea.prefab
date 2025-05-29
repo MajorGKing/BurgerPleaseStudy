@@ -129,7 +129,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1765489754742147811}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91d8bdde59621cf4988275f49946661f, type: 3}
+  m_Script: {fileID: 11500000, guid: 34902ccafa342465fae33972ed41b0b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2941332104511414344
@@ -251,12 +251,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2941332104511414344}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47eb03ea67cb9214b9fb740f6c2fb5e4, type: 3}
+  m_Script: {fileID: 11500000, guid: 923124a77ba5d4d8b9a87ee9bddeddf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _row: 2
   _column: 1
-  _size: {x: 0.5, y: 0.3, z: 0.5}
+  _size: {x: 0.5, y: 0.1, z: 0.5}
   _dropInterval: 0.05
 --- !u!114 &5073255907672207511
 MonoBehaviour:
@@ -267,7 +267,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2941332104511414344}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 780ca8a9b1f3077419c1c267ce99bb5c, type: 3}
+  m_Script: {fileID: 11500000, guid: 72e722aa4480045e1bccc891f0b22748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   InteractInterval: 0.5
@@ -476,7 +476,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6354800792603199247}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91d8bdde59621cf4988275f49946661f, type: 3}
+  m_Script: {fileID: 11500000, guid: 34902ccafa342465fae33972ed41b0b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8093268313635861666
@@ -556,10 +556,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8279336582697525651}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c42eb6cf5e8cbd46be349eeaa7bba2d, type: 3}
+  m_Script: {fileID: 11500000, guid: cd83a74360e4a46d486e822078132612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ConstructionArea: {fileID: 0}
   WorkerPos: {fileID: 8962799174965262875}
+  StopSpawnBurger: 1
 --- !u!1001 &4485312835172541232
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -568,22 +570,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4242177994232638221}
     m_Modifications:
-    - target: {fileID: 2028982518336250015, guid: 74726f06beb129c48878d3a59bd5f84b, type: 3}
-      propertyPath: m_Size.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2028982518336250015, guid: 74726f06beb129c48878d3a59bd5f84b, type: 3}
-      propertyPath: m_Size.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2028982518336250015, guid: 74726f06beb129c48878d3a59bd5f84b, type: 3}
-      propertyPath: m_Size.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2028982518336250015, guid: 74726f06beb129c48878d3a59bd5f84b, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2977894562034924066, guid: 74726f06beb129c48878d3a59bd5f84b, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -672,21 +658,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4439515104041791538, guid: 74726f06beb129c48878d3a59bd5f84b, type: 3}
-      propertyPath: Owner
-      value: 
-      objectReference: {fileID: 9084021039124462911}
-    - target: {fileID: 4439515104041791538, guid: 74726f06beb129c48878d3a59bd5f84b, type: 3}
-      propertyPath: TotalUpgradeMoney
-      value: 10000
-      objectReference: {fileID: 0}
     - target: {fileID: 8621988837232000837, guid: 74726f06beb129c48878d3a59bd5f84b, type: 3}
       propertyPath: m_Name
       value: UI_ConstructionArea
-      objectReference: {fileID: 0}
-    - target: {fileID: 9171924044320400360, guid: 74726f06beb129c48878d3a59bd5f84b, type: 3}
-      propertyPath: InteractInterval
-      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
