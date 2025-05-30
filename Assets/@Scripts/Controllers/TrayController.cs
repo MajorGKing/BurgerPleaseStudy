@@ -40,20 +40,52 @@ public class TrayController : MonoBehaviour
     public int TotalItemCount => _reserved.Count + _items.Count; // 쟁반 위로 이동중인 아이템을 포함한 전체 개수.
 
     private MeshRenderer _meshRenderer;
-	//private StickmanController _owner;
+	private StickmanController _owner;
 	public bool IsPlayer = false;
 
     public bool Visible
 	{
-		set { if (_meshRenderer != null ) _meshRenderer.enabled = value; }//_owner?.UpdateAnimation(); }
+		set { if (_meshRenderer != null ) _meshRenderer.enabled = value; _owner?.UpdateAnimation(); }
 		get { return (_meshRenderer != null) ? _meshRenderer.enabled : false; }
 	}
 
     private void Start()
 	{
 		_meshRenderer = GetComponent<MeshRenderer>();
-		// _owner = transform.parent.GetComponent<StickmanController>();
+		_owner = transform.parent.GetComponent<StickmanController>();
 		Visible = false;
+	}
+
+	// 휘는거 조정.
+	private void Update()
+	{
+		Visible = (_items.Count > 0);
+
+		if (_items.Count == 0)
+			return;
+
+		Vector3 moveDir = Vector3.zero;
+
+		if (IsPlayer)
+		{
+			Vector3 dir = Managers.Game.JoystickDir;
+			moveDir = new Vector3(dir.x, 0, dir.y);
+			moveDir = (Quaternion.Euler(0, 45, 0) * moveDir).normalized;
+		}
+
+		_items[0].position = transform.position;
+		_items[0].rotation = transform.rotation;
+
+		for (int i = 1; i < _items.Count; i++)
+		{
+			float rate = Mathf.Lerp(_shakeRange.x, _shakeRange.y, i / (float)_items.Count);
+
+			_items[i].position =  Vector3.Lerp(_items[i].position, _items[i - 1].position + (_items[i - 1].up * _itemHeight), rate);
+			_items[i].rotation = Quaternion.Lerp(_items[i].rotation, _items[i - 1].rotation, rate);
+
+			if (moveDir != Vector3.zero)
+				_items[i].rotation *= Quaternion.Euler(-i * _bendFactor * rate, 0, 0);
+		}
 	}
 
     public void AddToTray(Transform child)
