@@ -12,35 +12,35 @@ using System.Collections;
 
 public class WorkerController : StickmanController
 {
-protected CharacterController _controller;
+	protected CharacterController _controller;
 	public SystemBase CurrentSystem;
 
-    public Coroutine WorkerJob;
-    public void DoJob(IEnumerator job)
+	public Coroutine WorkerJob;
+	public void DoJob(IEnumerator job)
 	{
 		if (WorkerJob != null)
 			StopCoroutine(WorkerJob);
-		
+
 		WorkerJob = StartCoroutine(job);
 	}
 
-    protected override void Awake()
-    {
-        base.Awake();
+	protected override void Awake()
+	{
+		base.Awake();
 
 		_controller = GetComponent<CharacterController>();
-    }
+	}
 
-    private void Start()
+	private void Start()
 	{
 		State = Define.EAnimState.Move;
 	}
 
-    protected override void Update()
-    {
-        base.Update();
+	protected override void Update()
+	{
+		base.Update();
 
-        if (HasArrivedAtDestination)
+		if (HasArrivedAtDestination)
 		{
 			_navMeshAgent.isStopped = true;
 			State = Define.EAnimState.Idle;
@@ -50,5 +50,5 @@ protected CharacterController _controller;
 			State = Define.EAnimState.Move;
 			LookAtDestination();
 		}
-    }
+	}
 }

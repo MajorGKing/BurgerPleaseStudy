@@ -293,11 +293,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1263181597765428418}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db6f3bf7885be89418d666c813fb7cda, type: 3}
+  m_Script: {fileID: 11500000, guid: 421cb3b29da3d4bc38f93011c9d1d0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 5
-  _rotateSpeed: 360
 --- !u!195 &7080443626177476131
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -653,12 +651,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3437786131141389439}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c997491224c09ec4da0b711f02210ecc, type: 3}
+  m_Script: {fileID: 11500000, guid: 450d78866852441c8aa841f372a87a07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _shakeRange: {x: 0.8, y: 0.4}
   _bendFactor: 0.1
   _itemHeight: 0.5
+  IsPlayer: 0
 --- !u!1 &3507678065622115252
 GameObject:
   m_ObjectHideFlags: 0

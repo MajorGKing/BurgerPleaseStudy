@@ -23,50 +23,41 @@ public class UI_Joystick : UI_Scene
 
 		_background = GetObject((int)GameObjects.JoystickBG);
 		_cursor = GetObject((int)GameObjects.JoystickCursor);
-		_radius = _background.GetComponent<RectTransform>().sizeDelta.y / 5;
+		_radius = _background.GetComponent<RectTransform>().sizeDelta.y / 3;
 
 		gameObject.BindEvent(OnPointerDown, type: ETouchEvent.PointerDown);
 		gameObject.BindEvent(OnPointerUp, type: ETouchEvent.PointerUp);
 		gameObject.BindEvent(OnDrag, type: ETouchEvent.Drag);
 
-		GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceCamera;
-		GetComponent<Canvas>().worldCamera = Camera.main;
+		// GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceCamera;
+		// GetComponent<Canvas>().worldCamera = Camera.main;
 	}
 
 	#region Event
 	public void OnPointerDown(PointerEventData evt)
 	{
-		_touchPos = Input.mousePosition;
-
-		Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-		// _background.transform.position = mouseWorldPos;
-		// _cursor.transform.position = mouseWorldPos;
-
-		//Managers.Game.JoystickState = ETouchEvent.PointerDown;
+		_background.transform.position = evt.position;
+		_cursor.transform.position = evt.position;
+		_touchPos = evt.position;
 	}
 
 	public void OnPointerUp(PointerEventData evt)
 	{
-		// _background.transform.position = _touchPos;
-		_cursor.transform.localPosition = Vector3.zero;
+		_cursor.transform.position = _touchPos;
 
-		//Managers.Game.MoveDir = Vector2.zero;
-		//Managers.Game.JoystickState = ETouchEvent.PointerUp;
+		Managers.Game.JoystickDir = Vector2.zero;
 	}
 
-	public void OnDrag(PointerEventData eventData)
+	public void OnDrag(PointerEventData evt)
 	{
-		Vector2 touchDir = (eventData.position - _touchPos);
+		Vector2 touchDir = (evt.position - _touchPos);
 
 		float moveDist = Mathf.Min(touchDir.magnitude, _radius);
 		Vector2 moveDir = touchDir.normalized;
 		Vector2 newPosition = _touchPos + moveDir * moveDist;
+		_cursor.transform.position = newPosition;
 
-		Vector2 worldPos = Camera.main.ScreenToWorldPoint(newPosition);
-		_cursor.transform.position = worldPos;
-
-		//Managers.Game.MoveDir = moveDir;
-		//Managers.Game.JoystickState = ETouchEvent.Drag;
+		Managers.Game.JoystickDir = moveDir;
 	}
 	#endregion
 }

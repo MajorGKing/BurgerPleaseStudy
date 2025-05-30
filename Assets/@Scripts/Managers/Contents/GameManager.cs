@@ -10,6 +10,5 @@ using Random = UnityEngine.Random;
 
 public class GameManager
 {
-
-
+    public Vector2 JoystickDir { get; set; } = Vector2.zero;
 }
