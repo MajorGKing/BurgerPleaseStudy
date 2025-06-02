@@ -157,12 +157,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1116592930192596891}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be5f34c7428815c4e873d7b753d0cc15, type: 3}
+  m_Script: {fileID: 11500000, guid: 240ce6eda2ece4f0d82d3364b92e2641, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _row: 4
+  _row: 2
   _column: 2
-  _size: {x: 0.2, y: 0.1, z: 0.3}
+  _size: {x: 0.5, y: 0.1, z: 0.5}
   _dropInterval: 0.05
 --- !u!114 &8986261827830937675
 MonoBehaviour:
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1116592930192596891}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 780ca8a9b1f3077419c1c267ce99bb5c, type: 3}
+  m_Script: {fileID: 11500000, guid: 72e722aa4480045e1bccc891f0b22748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   InteractInterval: 0.5
@@ -289,7 +289,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2364071409581425685}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba2fcf99f918e7244916e8721e5d701e, type: 3}
+  m_Script: {fileID: 11500000, guid: ef53d899bc5c04954b70dbb3cc75fa10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ConstructionArea: {fileID: 5524274810095196341}
@@ -650,7 +650,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5091118686246302220}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 780ca8a9b1f3077419c1c267ce99bb5c, type: 3}
+  m_Script: {fileID: 11500000, guid: 72e722aa4480045e1bccc891f0b22748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   InteractInterval: 0.5
@@ -719,7 +719,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6866586162063496976}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47eb03ea67cb9214b9fb740f6c2fb5e4, type: 3}
+  m_Script: {fileID: 11500000, guid: 923124a77ba5d4d8b9a87ee9bddeddf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _row: 1
@@ -735,7 +735,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6866586162063496976}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 780ca8a9b1f3077419c1c267ce99bb5c, type: 3}
+  m_Script: {fileID: 11500000, guid: 72e722aa4480045e1bccc891f0b22748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   InteractInterval: 0.5
@@ -822,7 +822,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7207589222533472360}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 306d912f72728dd4b929cb746cd31d1f, type: 3}
+  m_Script: {fileID: 11500000, guid: b8048d413439d49c895ed2d754ba1d12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
@@ -1050,7 +1050,7 @@ PrefabInstance:
     - target: {fileID: 4439515104041791538, guid: 74726f06beb129c48878d3a59bd5f84b, type: 3}
       propertyPath: Owner
       value: 
-      objectReference: {fileID: 7516309277969094855}
+      objectReference: {fileID: 0}
     - target: {fileID: 8621988837232000837, guid: 74726f06beb129c48878d3a59bd5f84b, type: 3}
       propertyPath: m_Name
       value: UI_ConstructionArea
@@ -1073,6 +1073,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb58a3cde2b57d44dbd46d64f94688af, type: 3}
+  m_Script: {fileID: 11500000, guid: 58fa031a5550640aca7caece69a1f62f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

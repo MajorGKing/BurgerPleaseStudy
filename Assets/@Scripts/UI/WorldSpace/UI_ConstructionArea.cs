@@ -6,23 +6,61 @@ using UnityEngine.UI;
 [RequireComponent(typeof(WorkerInteraction))]
 public class UI_ConstructionArea : MonoBehaviour
 {
-    [SerializeField]
-    Slider _slider;
+	[SerializeField]
+	Slider _slider;
 
-    [SerializeField]
+	[SerializeField]
 	TextMeshProUGUI _moneyText;
 
-    public UnlockableBase Owner;
-    public long TotalUpgradeMoney;
+	public UnlockableBase Owner;
+	public long TotalUpgradeMoney;
 	public long MoneyRemaining => TotalUpgradeMoney - SpentMoney;
 
-    public long SpentMoney
+	public long SpentMoney
 	{
-		get {  return Owner.SpentMoney; }
+		get { return Owner.SpentMoney; }
 		set { Owner.SpentMoney = value; }
 	}
 
-    public void RefreshUI()
+	void Start()
+	{
+		GetComponent<WorkerInteraction>().OnInteraction = OnWorkerInteraction;
+		GetComponent<WorkerInteraction>().InteractInterval = Define.CONSTRUCTION_UPGRADE_INTERVAL;
+
+		// TODO : 데이터 참고해서 업그레이드 비용 설정.
+		TotalUpgradeMoney = 50;
+	}
+
+	public void OnWorkerInteraction(WorkerController wc)
+	{
+		if (Owner == null)
+			return;
+
+		long money = (long)(TotalUpgradeMoney / (1 / Define.CONSTRUCTION_UPGRADE_INTERVAL));
+		if (money == 0)
+			money = 1;
+
+		if (Managers.Game.Money < money)
+			return;
+
+		Managers.Game.Money -= money;
+		SpentMoney += money;
+
+		if (SpentMoney >= TotalUpgradeMoney)
+		{
+			SpentMoney = TotalUpgradeMoney;
+
+			// 해금 완료.
+			Owner.SetUnlockedState(Define.EUnlockedState.Unlocked);
+
+			// TODO ILHAK Broadcast Event 구현
+			//GameManager.Instance.BroadcastEvent(EEventType.UnlockProp);
+		}
+
+		RefreshUI();
+	}
+
+	public void RefreshUI()
 	{
 		_slider.value = SpentMoney / (float)TotalUpgradeMoney;
 		_moneyText.text = Utils.GetMoneyText(MoneyRemaining);

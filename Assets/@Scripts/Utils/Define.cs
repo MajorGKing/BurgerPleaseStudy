@@ -78,6 +78,23 @@ public class Define
 		Money,
 	}
 
+    public enum EGuestState
+	{
+		None,
+		Queuing,
+		Serving,
+		Eating,
+		Leaving,
+	}
+
+    public enum ETableState
+	{
+		None,
+		Reserved,
+		Eating,
+		Dirty,
+	}
+
     public enum EUnlockedState
     {
         Hidden,
@@ -126,6 +143,7 @@ public class Define
     public const string MONEYOBJECT = "Money";
     public const string TRASHOBJECT = "Trash";
     public const string TRASHCANOBJECT = "TrashCan";
+    public const string GUEST = "Guest";
 
     #endregion
 }
