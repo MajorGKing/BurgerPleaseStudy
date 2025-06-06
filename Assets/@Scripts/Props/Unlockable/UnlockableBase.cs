@@ -5,9 +5,11 @@ public class UnlockableBase : MonoBehaviour
     public UI_ConstructionArea ConstructionArea;
     private UnlockableStateData _data;
 
-    public void SetInfo(UnlockableStateData data)
+	public void SetInfo(UnlockableStateData data)
 	{
-	
+		_data = data;
+		SetUnlockedState(data.State);
+		ConstructionArea.RefreshUI();
 	}
 
     Define.EUnlockedState State

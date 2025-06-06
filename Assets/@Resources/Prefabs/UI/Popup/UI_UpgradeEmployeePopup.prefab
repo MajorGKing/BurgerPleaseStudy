@@ -1290,13 +1290,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2396252258214300441}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbc09279919df5948a0102dd28560447, type: 3}
+  m_Script: {fileID: 11500000, guid: b124a3156f0584f97bbc04822649a4ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _closeButton: {fileID: 7719288181055816484}
-  _speedItem: {fileID: 4348747924051466733}
-  _capacityItem: {fileID: 5338397632512570116}
-  _hireItem: {fileID: 3008513451716712111}
+  UICanvas: {fileID: 0}
 --- !u!1 &2561749452371656415
 GameObject:
   m_ObjectHideFlags: 0
@@ -1877,11 +1874,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3922180204944690499}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42da5c796026f2e4ab4461fdc746cf1f, type: 3}
+  m_Script: {fileID: 11500000, guid: b3476edbc99c44510bf5212e27a511ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _purchaseButton: {fileID: 7049112666657684748}
-  _costText: {fileID: 3156614487416625362}
+  _parentScrollRect: {fileID: 0}
 --- !u!1 &4208617802326910197
 GameObject:
   m_ObjectHideFlags: 0
@@ -2670,11 +2666,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5126450310084211703}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42da5c796026f2e4ab4461fdc746cf1f, type: 3}
+  m_Script: {fileID: 11500000, guid: b3476edbc99c44510bf5212e27a511ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _purchaseButton: {fileID: 8136421543812141746}
-  _costText: {fileID: 486529601094252446}
+  _parentScrollRect: {fileID: 0}
 --- !u!1 &5132896454263447959
 GameObject:
   m_ObjectHideFlags: 0
@@ -3778,11 +3773,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8253849148562657922}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42da5c796026f2e4ab4461fdc746cf1f, type: 3}
+  m_Script: {fileID: 11500000, guid: b3476edbc99c44510bf5212e27a511ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _purchaseButton: {fileID: 8000504150162375442}
-  _costText: {fileID: 1206598005009350735}
+  _parentScrollRect: {fileID: 0}
 --- !u!1 &8757538608742376925
 GameObject:
   m_ObjectHideFlags: 0

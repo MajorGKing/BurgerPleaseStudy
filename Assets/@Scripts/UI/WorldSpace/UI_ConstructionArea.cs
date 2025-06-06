@@ -22,7 +22,7 @@ public class UI_ConstructionArea : MonoBehaviour
 		set { Owner.SpentMoney = value; }
 	}
 
-	void Start()
+	private void Start() 
 	{
 		GetComponent<WorkerInteraction>().OnInteraction = OnWorkerInteraction;
 		GetComponent<WorkerInteraction>().InteractInterval = Define.CONSTRUCTION_UPGRADE_INTERVAL;
@@ -46,15 +46,17 @@ public class UI_ConstructionArea : MonoBehaviour
 		Managers.Game.Money -= money;
 		SpentMoney += money;
 
+		Debug.Log($"Money : {money}");
+		Debug.Log($"Spend Mony : {SpentMoney}");
+
 		if (SpentMoney >= TotalUpgradeMoney)
 		{
 			SpentMoney = TotalUpgradeMoney;
 
 			// 해금 완료.
 			Owner.SetUnlockedState(Define.EUnlockedState.Unlocked);
-
-			// TODO ILHAK Broadcast Event 구현
-			//GameManager.Instance.BroadcastEvent(EEventType.UnlockProp);
+			
+			Managers.Event.TriggerEvent(Define.EEventType.UnlockProp);
 		}
 
 		RefreshUI();

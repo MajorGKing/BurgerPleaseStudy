@@ -11,7 +11,7 @@ public class GameManager
 {
     public Vector2 JoystickDir { get; set; } = Vector2.zero;
 
-    public long Money{get; set;}
+    public long Money{get; set;} = 10000;
 
     public GameObject SpawnGuest() { return Managers.Resource.Instantiate(Define.GUEST); }
 }

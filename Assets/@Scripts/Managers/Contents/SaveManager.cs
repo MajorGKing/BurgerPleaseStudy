@@ -40,17 +40,66 @@ public class UnlockableStateData
 }
 #endregion
 
-public class SaveManager : MonoBehaviour
+public class SaveManager
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    private GameSaveData _saveData = new GameSaveData();
+	public GameSaveData SaveData => _saveData;
+	public string Path { get { return Application.persistentDataPath + "/SaveData.json"; } }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	public void Init()
+	{
+		if (LoadGame() == false)
+		{
+			InitGame();
+			SaveGame();
+		}
+	}
+
+	public void InitGame()
+	{
+		if (File.Exists(Path))
+			return;
+
+		// 소지금.
+		_saveData.Money = 1000;
+				// 각종 업그레이드.
+
+		// 스테이지 별 상태.
+		const int MAX_STAGE = 10;
+		const int MAX_PROPS = 20;
+
+		_saveData.Restaurants = new List<RestaurantData>();
+		for (int i = 0; i < MAX_STAGE; i++)
+		{
+			RestaurantData restaurantData = new RestaurantData();
+
+			restaurantData.UnlockableStates = new List<UnlockableStateData>();
+			for (int j = 0; j < MAX_PROPS; j++)
+				restaurantData.UnlockableStates.Add(new UnlockableStateData());
+
+			_saveData.Restaurants.Add(restaurantData);
+		}
+	}
+
+	public void SaveGame()
+	{
+		string jsonStr = JsonUtility.ToJson(_saveData);
+		File.WriteAllText(Path, jsonStr);
+		Debug.Log($"Save Game Completed : {Path}");
+	}
+
+	public bool LoadGame()
+	{
+		if (File.Exists(Path) == false)
+			return false;
+
+		string fileStr = File.ReadAllText(Path);
+		GameSaveData data = JsonUtility.FromJson<GameSaveData>(fileStr);
+
+		if (data != null)
+			_saveData = data;
+
+		Debug.Log($"Save Game Loaded : {Path}");
+		return true;
+	}
 }

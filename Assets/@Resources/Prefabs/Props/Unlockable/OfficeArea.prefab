@@ -1962,7 +1962,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7453746672849312170}
   - component: {fileID: 4397957892732251379}
-  - component: {fileID: 164636037365456368}
+  - component: {fileID: 3097856648275230536}
   - component: {fileID: 8389819650723627791}
   m_Layer: 0
   m_Name: Office_01
@@ -2010,7 +2010,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 7, y: 7, z: 7}
   m_Center: {x: 0, y: 2.4820156, z: 0}
---- !u!114 &164636037365456368
+--- !u!114 &3097856648275230536
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2019,7 +2019,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6463652878033896006}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 780ca8a9b1f3077419c1c267ce99bb5c, type: 3}
+  m_Script: {fileID: 11500000, guid: 72e722aa4480045e1bccc891f0b22748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   InteractInterval: 0.5
@@ -2033,7 +2033,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6463652878033896006}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3779fe19391479946923ba2d9de3c0d7, type: 3}
+  m_Script: {fileID: 11500000, guid: 5953eb4b0e2b64557878a31a1ad5349a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7050291273037490446

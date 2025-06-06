@@ -10,6 +10,9 @@ public class Grill : UnlockableBase
 {
     private BurgerPile _burgers;
     private WorkerInteraction _interaction;
+
+	public int BurgerCount => _burgers.ObjectCount;
+	public WorkerController CurrentWorker => _interaction.CurrentWorker;
     public Transform WorkerPos;
     public bool StopSpawnBurger = true;
 
