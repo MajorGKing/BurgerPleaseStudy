@@ -15,8 +15,26 @@ MonoBehaviour:
   m_GroupName: UI
   m_GUID: bdf0684c0f42c9f43a11a6b597ad0e5c
   m_SerializeEntries:
+  - m_GUID: 3109fa2f336434711becae9ddfdf6ec1
+    m_Address: UI_Joystick
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 83a9adebd38a8464e84ee29e7b723c4b
     m_Address: UI_UpgradeEmployeePopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9f17c62bca49b124b93096ae47dc5234
+    m_Address: EventSystem
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f4947ed7a3b774597a39dfadac1c74ce
+    m_Address: UI_GameScene
     m_ReadOnly: 0
     m_SerializedLabels:
     - Preload

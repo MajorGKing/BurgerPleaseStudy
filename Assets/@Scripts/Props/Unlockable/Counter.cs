@@ -94,7 +94,7 @@ public class Counter : UnlockableBase
 			if (_queueGuests.Count == _queuePoints.Count)
 				continue;
 
-			GameObject go = Managers.Game.SpawnGuest();
+			GameObject go = Managers.Resource.Instantiate(Define.GUEST);
 			go.transform.position = GuestSpawnPos.position;
 
 			Transform dest = _queuePoints.Last();

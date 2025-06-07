@@ -438,11 +438,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2932317819774262851}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1da9c52505fcd2747b68fa70e1e0a933, type: 3}
+  m_Script: {fileID: 11500000, guid: 008c39dc9d3615b42984c91e6a5b6d61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moneyCountText: {fileID: 9071067514922698488}
-  _toastMessageText: {fileID: 8816818380430289870}
 --- !u!1 &3383644002522759845
 GameObject:
   m_ObjectHideFlags: 0

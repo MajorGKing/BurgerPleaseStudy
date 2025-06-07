@@ -37,11 +37,10 @@ public class Restaurant : MonoBehaviour
 			Props[i].SetInfo(stateData);
 		}
 
-        // TODO ILHAK after Tutorial
-        // Tutorial tutorial = GetComponent<Tutorial>();
+        Tutorial tutorial = GetComponent<Tutorial>();
 
-        // if (tutorial != null)
-		// 	tutorial.SetInfo(data);
+        if (tutorial != null)
+			tutorial.SetInfo(data);
 
 		for (int i = 0; i < data.WorkerCount; i++)
 			OnHireWorker();
