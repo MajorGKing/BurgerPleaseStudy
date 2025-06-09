@@ -47,8 +47,6 @@ public class GameManager
 		{
 			yield return new WaitForSeconds(10);
 
-			Debug.Log("Try Save!");
-
 			if (Managers.Scene.CurrentScene.SceneType != Define.EScene.DevScene || Managers.Scene.CurrentScene.SceneType != Define.EScene.GameScene)
 				continue;
 

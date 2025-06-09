@@ -46,9 +46,6 @@ public class UI_ConstructionArea : MonoBehaviour
 		Managers.Game.Money -= money;
 		SpentMoney += money;
 
-		Debug.Log($"Money : {money}");
-		Debug.Log($"Spend Mony : {SpentMoney}");
-
 		if (SpentMoney >= TotalUpgradeMoney)
 		{
 			SpentMoney = TotalUpgradeMoney;

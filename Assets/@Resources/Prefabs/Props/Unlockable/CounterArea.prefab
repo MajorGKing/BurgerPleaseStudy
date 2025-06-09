@@ -1050,7 +1050,7 @@ PrefabInstance:
     - target: {fileID: 4439515104041791538, guid: 74726f06beb129c48878d3a59bd5f84b, type: 3}
       propertyPath: Owner
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 7516309277969094855}
     - target: {fileID: 8621988837232000837, guid: 74726f06beb129c48878d3a59bd5f84b, type: 3}
       propertyPath: m_Name
       value: UI_ConstructionArea
