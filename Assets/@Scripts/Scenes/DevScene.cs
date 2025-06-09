@@ -24,6 +24,8 @@ public class DevScene : BaseScene
 			_uiGameScene.SetInfo();
 		}
 
+        Managers.Game.StartSaveGame();
+
     }
 
     public override void Clear()

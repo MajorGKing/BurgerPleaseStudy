@@ -26,10 +26,13 @@ public class Restaurant : MonoBehaviour
 
     public void SetInfo(RestaurantData data)
     {
+        Debug.Log("SetInfo Start!");
         _data = data;
 
         RestaurantSystems = GetComponentsInChildren<SystemBase>().ToList();
 		Props = GetComponentsInChildren<UnlockableBase>().ToList();
+
+        Debug.Log(Props.Count);
 
         for (int i = 0; i < Props.Count; i++)
 		{

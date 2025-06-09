@@ -1,13 +1,13 @@
 using System.Collections;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager
 {
-    public Vector2 JoystickDir { get; set; } = Vector2.zero;
-    public PlayerController Player;
-    public Restaurant Restaurant;
+	public Vector2 JoystickDir { get; set; } = Vector2.zero;
+	public PlayerController Player;
+	public Restaurant Restaurant;
 
-    public long Money
+	public long Money
 	{
 		get { return Managers.Save.SaveData.Money; }
 		set
@@ -17,12 +17,17 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-    public void Init()
-    {
-		StartCoroutine(CoInitialize());
-    }
+	public void Init()
+	{
+		// Managers.Instance.StartCoroutine(CoInitialize());
+	}
 
-    // 한 프레임 기다려서 모든 오브젝트 초기화 끝나고 실행.
+	public void StartSaveGame()
+	{
+		Managers.Instance.StartCoroutine(CoInitialize());
+	}
+
+	// 한 프레임 기다려서 모든 오브젝트 초기화 끝나고 실행.
 	public IEnumerator CoInitialize()
 	{
 		yield return new WaitForEndOfFrame();
@@ -33,7 +38,7 @@ public class GameManager : MonoBehaviour
 		int index = Restaurant.StageNum;
 		Restaurant.SetInfo(Managers.Save.SaveData.Restaurants[index]);
 
-		StartCoroutine(CoSaveData());
+		Managers.Instance.StartCoroutine(CoSaveData());
 	}
 
 	IEnumerator CoSaveData()
@@ -42,12 +47,15 @@ public class GameManager : MonoBehaviour
 		{
 			yield return new WaitForSeconds(10);
 
+			Debug.Log("Try Save!");
+
+			if (Managers.Scene.CurrentScene.SceneType != Define.EScene.DevScene || Managers.Scene.CurrentScene.SceneType != Define.EScene.GameScene)
+				continue;
+
 			Managers.Save.SaveData.RestaurantIndex = Restaurant.StageNum;
 			Managers.Save.SaveData.PlayerPosition = Player.transform.position;
 
 			Managers.Save.SaveGame();
 		}
 	}
-
-
 }
