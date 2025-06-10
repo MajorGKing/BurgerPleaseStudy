@@ -145,6 +145,28 @@ public class MainCounterSystem : SystemBase
 				Jobs[(int)Define.EMainCounterJob.MoveBurger] = null;
 			}
 
+			// 카운터 계산대.
+			if (ShouldDoJob(Define.EMainCounterJob.CounterCashier))
+			{
+				foundJob = true;
+
+				// 일감 점유.
+				Jobs[(int)Define.EMainCounterJob.CounterCashier] = wc;
+
+				// 계산대로 이동.
+				wc.SetDestination(Counter.CashierWorkerPos.position);
+
+				// 가는중.
+				yield return new WaitUntil(() => wc.HasArrivedAtDestination);
+
+				// 계산대 도착했으면 일정 시간 대기.
+				wc.transform.rotation = Counter.CashierWorkerPos.rotation;
+				yield return new WaitForSeconds(2);
+
+				// 일감 점유 해제.
+				Jobs[(int)Define.EMainCounterJob.CounterCashier] = null;
+			}
+
 			// 테이블 청소.
 			if (ShouldDoJob(Define.EMainCounterJob.CleanTable))
 			{

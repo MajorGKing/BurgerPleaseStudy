@@ -47,7 +47,7 @@ public class GameManager
 		{
 			yield return new WaitForSeconds(10);
 
-			if (Managers.Scene.CurrentScene.SceneType != Define.EScene.DevScene || Managers.Scene.CurrentScene.SceneType != Define.EScene.GameScene)
+			if (Managers.Scene.CurrentScene.SceneType != Define.EScene.DevScene && Managers.Scene.CurrentScene.SceneType != Define.EScene.GameScene)
 				continue;
 
 			Managers.Save.SaveData.RestaurantIndex = Restaurant.StageNum;

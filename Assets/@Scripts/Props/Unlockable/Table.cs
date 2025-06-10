@@ -135,20 +135,25 @@ public class Table : UnlockableBase
 			Guests.Clear();
 			TableState = Define.ETableState.Dirty;
         }
+        else if (TableState == Define.ETableState.Dirty)
+		{
+			if (SpawnTrashRemaining == 0 && _trashPile.ObjectCount == 0)
+				TableState = Define.ETableState.None;
+		}
     }
 
     IEnumerator CoSpawnTrash()
     {
         while (true)
 		{
-			yield return new WaitForSeconds(Define.MONEY_SPAWN_INTERVAL);
+			yield return new WaitForSeconds(Define.TRASH_SPAWN_INTERVAL);
 
-			if (SpawnMoneyRemaining <= 0)
+			if (SpawnTrashRemaining <= 0)
 				continue;
 
-			SpawnMoneyRemaining--;
+			SpawnTrashRemaining--;
 
-			_moneyPile.SpawnObject();
+			_trashPile.SpawnObject();
 		}
     }
 
